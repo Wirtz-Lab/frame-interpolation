@@ -153,6 +153,7 @@ class ProcessDirectory(beam.DoFn):
   """DoFn for running the interpolator on a single directory at the time."""
 
   def setup(self):
+    print(_MODEL_PATH.value)
     self.interpolator = interpolator_lib.Interpolator(
         _MODEL_PATH.value, _ALIGN.value,
         [_BLOCK_HEIGHT.value, _BLOCK_WIDTH.value])
