@@ -32,17 +32,6 @@ An alternative Colab for running FILM on arbitrarily more input images, not just
 
 *   Get Frame Interpolation source codes
 
-```
-git clone https://github.com/google-research/frame-interpolation
-cd frame-interpolation
-```
-
-*   Optionally, pull the recommended Docker base image
-
-```
-docker pull gcr.io/deeplearning-platform-release/tf2-gpu.2-6:latest
-```
-
 * If you do not use Docker, set up your NVIDIA GPU environment with:
     * [Anaconda Python 3.9](https://www.anaconda.com/products/individual)
     * [CUDA Toolkit 11.2.1](https://developer.nvidia.com/cuda-11.2.1-download-archive)
@@ -51,8 +40,9 @@ docker pull gcr.io/deeplearning-platform-release/tf2-gpu.2-6:latest
 *   Install frame interpolation dependencies
 
 ```
-pip3 install -r requirements.txt
-sudo apt-get install -y ffmpeg
+conda install tensorflow-gpu
+conda install -c conda-forge ffmpeg
+pip install -r requirements.txt
 ```
 
 ### See [WINDOWS_INSTALLATION](https://github.com/google-research/frame-interpolation/blob/main/WINDOWS_INSTALLATION.md) for Windows Support
