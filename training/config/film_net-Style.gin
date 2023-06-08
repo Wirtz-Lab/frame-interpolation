@@ -29,7 +29,8 @@ training.learning_rate_staircase = True
 training.num_steps = 3000000
 
 # in the sweep
-training_dataset.file = 'gs://xcloud-shared/fitsumreda/frame_interpolation/datasets/vimeo_interp_train.tfrecord@200'
+#training_dataset.file = 'gs://xcloud-shared/fitsumreda/frame_interpolation/datasets/vimeo_interp_train.tfrecord@200'
+training_dataset.file = r'\\shelter\Kyu\motility_interpolation\filmtest_train\sequences.tfrecord@250'
 training_dataset.batch_size = 8
 training_dataset.crop_size = 256
 
@@ -41,8 +42,8 @@ eval_datasets.max_examples = -1
 #                       'gs://xcloud-shared/fitsumreda/frame_interpolation/datasets/xiph_2K.tfrecord@2',
 #                       'gs://xcloud-shared/fitsumreda/frame_interpolation/datasets/xiph_4K.tfrecord@2']
 # eval_datasets.names = ['vimeo90K', 'middlebury', 'ucf101', 'xiph2K', 'xiph4K']
-eval_datasets.files = []
-eval_datasets.names = []
+eval_datasets.files = [r'\\shelter\Kyu\motility_interpolation\testv1\sequences.tfrecord@5']
+eval_datasets.names = ['vimeo90K2']
 
 # Training augmentation (in addition to random crop)
 data_augmentation.names = ['random_image_rot90', 'random_flip', 'random_rotate', 'random_reverse']
@@ -62,5 +63,5 @@ training_losses.loss_weight_parameters = [
 test_losses.loss_names = ['l1', 'psnr', 'ssim']
 test_losses.loss_weights = [1.0, 1.0, 1.0]
 
-vgg.vgg_model_file = 'gs://xcloud-shared/fitsumreda/frame_interpolation/pretrained_models/vgg/imagenet-vgg-verydeep-19.mat'
-style.vgg_model_file = 'gs://xcloud-shared/fitsumreda/frame_interpolation/pretrained_models/vgg/imagenet-vgg-verydeep-19.mat'
+vgg.vgg_model_file = r'\\shelter\Kyu\motility_interpolation\pretrained_models\vgg\imagenet-vgg-verydeep-19.mat'
+style.vgg_model_file = r'\\shelter\Kyu\motility_interpolation\pretrained_models\vgg\imagenet-vgg-verydeep-19.mat'
