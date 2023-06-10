@@ -27,6 +27,7 @@ def _output_frames(frames: List[np.ndarray], frames_dir: str):
   for idx, frame in tqdm(
       enumerate(frames), total=len(frames), ncols=100, colour='green'):
     util.write_image(f'{frames_dir}/im{idx:01d}.png', frame)
+  print('Output frames saved in {}'.format(frames_dir))
   logging.info('Output frames saved in %s.', frames_dir)
 
 class ProcessDirectory(beam.DoFn):
@@ -63,15 +64,15 @@ class ProcessDirectory(beam.DoFn):
 
 if __name__=='__main__':
     pattern = r"\\shelter\Kyu\motility_interpolation\filmtest\*\original_frames"
-    directories = tf.io.gfile.glob(pattern)
+    directories = natsort.natsorted(tf.io.gfile.glob(pattern))
     # directories = directories[:2]
     # print(directories)
 
     modelpath=r"\\shelter\Kyu\motility_interpolation\pretrained_models\film_net\Style\saved_model"
-    modelpath=r'\\shelter\Kyu\motility_interpolation\labelfortherun\saved_model'
+    # modelpath=r'\\shelter\Kyu\motility_interpolation\labelfortherun\saved_model'
     # modelname=os.path.basename(modelpath)
-    modelname='buildskip1_applyskip3'
-    time2inter=2 #[1,3,7,15,31,...]
+    modelname='ogfilm_applyskip7'
+    time2inter=3 #[1,3,7,15,31,...]
 
     align=64
     bh=1

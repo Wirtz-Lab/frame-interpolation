@@ -1,6 +1,7 @@
 # Docker base image: `gcr.io/deeplearning-platform-release/tf2-gpu.2-6:latest`
-# conda install tensorflow==2.6.2 # The latest should include tensorflow-gpu
+# conda install tensorflow-gpu #it says no need gpu tag anymore, but we still need 2.6.2 needed
 # conda install -c conda-forge ffmpeg
+# conda install keras
 tensorflow-datasets==4.4.0
 tensorflow-addons==0.15.0
 absl-py==0.12.0
@@ -16,3 +17,4 @@ tqdm==4.64.1
 python-snappy
 notebook
 pandas
+#numpy==1.23.4 if np.object error occurs
