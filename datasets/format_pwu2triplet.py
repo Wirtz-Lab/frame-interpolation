@@ -28,10 +28,10 @@ def format_pwu2triplet(src,dst,imormsk,skip):
 
 if __name__ == '__main__':
     src = r'\\shelter\Kyu\motility_interpolation\filmtest'
-    dst = r'\\shelter\Kyu\motility_interpolation\filmtest_train_skip3'
+    dst = r'\\shelter\Kyu\motility_interpolation\filmtest_train_skip5'
     # imormsk = 'cell_mask'
     imormsk = 'original_frames'
-    skip=3
+    skip=5
     format_pwu2triplet(src, dst,imormsk,skip)
 
 
