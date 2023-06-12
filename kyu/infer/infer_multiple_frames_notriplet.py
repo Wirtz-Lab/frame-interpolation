@@ -71,8 +71,8 @@ if __name__=='__main__':
     modelpath=r"\\shelter\Kyu\motility_interpolation\pretrained_models\film_net\Style\saved_model"
     # modelpath=r'\\shelter\Kyu\motility_interpolation\labelfortherun\saved_model'
     # modelname=os.path.basename(modelpath)
-    modelname='ogfilm_applyskip7'
-    time2inter=3 #[1,3,7,15,31,...]
+    modelname='ogfilm_applyskip3'
+    time2inter=2 #[1,3,7,15,31,...]
 
     align=64
     bh=1
