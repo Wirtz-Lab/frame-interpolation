@@ -1,7 +1,9 @@
-# Docker base image: `gcr.io/deeplearning-platform-release/tf2-gpu.2-6:latest`
+# set conda python 3.9
 # conda install tensorflow-gpu #it says no need gpu tag anymore, but we still need 2.6.2 needed
+# CondaSSLError: OpenSSL appears to be unavailable <- add conda to path
 # conda install -c conda-forge ffmpeg
 # conda install keras
+# pip install -r requirements.txt to install below
 tensorflow-datasets==4.4.0
 tensorflow-addons==0.15.0
 absl-py==0.12.0
@@ -17,5 +19,4 @@ tqdm==4.64.1
 python-snappy
 notebook
 pandas
-tensorflow-io
 #numpy==1.23.4 if np.object error occurs
