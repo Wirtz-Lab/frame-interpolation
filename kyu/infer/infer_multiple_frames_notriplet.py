@@ -67,6 +67,8 @@ if __name__=='__main__':
     directories = natsort.natsorted(tf.io.gfile.glob(pattern))
     # directories = directories[:2]
     # print(directories)
+    directories = [r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Actin_50percent',
+                   r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Nuclei_50percent']
 
     modelpath=r"\\shelter\Kyu\motility_interpolation\pretrained_models\film_net\Style\saved_model"
     # modelpath=r'\\shelter\Kyu\motility_interpolation\labelfortherun\saved_model'
