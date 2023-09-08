@@ -19,4 +19,6 @@ tqdm==4.64.1
 python-snappy
 notebook
 pandas
+nd2
+lxml
 #numpy==1.23.4 if np.object error occurs

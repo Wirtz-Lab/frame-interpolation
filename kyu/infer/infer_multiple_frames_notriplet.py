@@ -55,25 +55,25 @@ class ProcessDirectory(beam.DoFn):
     frames = list(
         util.interpolate_recursively_from_files(
             input_frames, time2inter, self.interpolator))
+
     _output_frames(frames, f'{directory}/{modelname}')
 
     if outputvideo:
       media.write_video(f'{directory}/interpolated.mp4', frames, fps=fps)
       logging.info('Out;put video saved at %s/interpolated.mp4.', directory)
 
-
 if __name__=='__main__':
     pattern = r"\\shelter\Kyu\motility_interpolation\filmtest\*\original_frames"
     directories = natsort.natsorted(tf.io.gfile.glob(pattern))
     # directories = directories[:2]
     # print(directories)
-    directories = [r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Actin_50percent',
-                   r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Nuclei_50percent']
-
+    # directories = [r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Actin_50percent',
+    #                r'\\shelter\Kyu\motility_interpolation\dataset\original_frames\GT04_12HR_Nuclei_50percent']
+    directories = [r'\\shelter\Kyu\motility_interpolation\dataset\cell_mask\GT04_12HR_Actin_50percent']
     modelpath=r"\\shelter\Kyu\motility_interpolation\pretrained_models\film_net\Style\saved_model"
     # modelpath=r'\\shelter\Kyu\motility_interpolation\labelfortherun\saved_model'
     # modelname=os.path.basename(modelpath)
-    modelname='ogfilm_applyskip3'
+    modelname='ogfilm_applyskip1_'
     time2inter=2 #[1,3,7,15,31,...]
 
     align=64
