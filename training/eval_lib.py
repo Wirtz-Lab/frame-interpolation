@@ -128,4 +128,5 @@ def eval_loop(strategy: tf.distribute.Strategy,
       logging.info('Step {:2}, {} {}'.format(checkpoint_step,
                                              f'{dataset_name}/{name}',
                                              metric.result().numpy()))
+
       metric.reset_states()

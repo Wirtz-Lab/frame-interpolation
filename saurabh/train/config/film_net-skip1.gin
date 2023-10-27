@@ -8,22 +8,22 @@ film_net.flow_convs = [3, 3, 3, 3]
 film_net.flow_filters = [32, 64, 128, 256]
 film_net.filters = 64
 
-training.learning_rate = 0.0001
-training.learning_rate_decay_steps = 750000
+training.learning_rate = 0.00001
+training.learning_rate_decay_steps = 2000
 training.learning_rate_decay_rate = 0.464158
 training.learning_rate_staircase = True
 # change this
-training.num_steps = 6000
+training.num_steps = 4000
 
 # change this
-training_dataset.file = r'\\fatherserverdw\Saurabh\Saurabh\Pancreas_Ashley_Files\training_tiles_triplet_v2\sequences.tfrecord@3'
+training_dataset.file = r'\\10.99.68.178\Saurabh\film_train_v2\sequences\trainingset_sk3_liv\sequences.tfrecord@46'
 training_dataset.batch_size = 8
 training_dataset.crop_size = 256
 
 eval_datasets.batch_size = 1
 eval_datasets.max_examples = -1
-eval_datasets.files = [r'\\fatherserverdw\Saurabh\Saurabh\Pancreas_Ashley_Files\test_tiles_triplet_v2\sequences.tfrecord@1']
-eval_datasets.names = ['skip1']
+eval_datasets.files = [r'\\10.99.68.178\Saurabh\film_train_v2\sequences\trainingset_sk3_liv\test\sequences.tfrecord@12']
+eval_datasets.names = ['livskip3_8_256_4000_00001']
 
 # Training augmentation (in addition to random crop)
 data_augmentation.names = ['random_image_rot90', 'random_flip', 'random_rotate', 'random_reverse']
